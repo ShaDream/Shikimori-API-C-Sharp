@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2003
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShikiApi", "ShikiApi\ShikiApi.csproj", "{DD5F3477-504E-4E76-890F-140BC4738888}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShikiApi_Tests", "ShikiApi_Tests\ShikiApi_Tests.csproj", "{13826AE0-CEC3-44A9-843F-BF095344BF52}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DD5F3477-504E-4E76-890F-140BC4738888}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DD5F3477-504E-4E76-890F-140BC4738888}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DD5F3477-504E-4E76-890F-140BC4738888}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DD5F3477-504E-4E76-890F-140BC4738888}.Release|Any CPU.Build.0 = Release|Any CPU
+		{13826AE0-CEC3-44A9-843F-BF095344BF52}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{13826AE0-CEC3-44A9-843F-BF095344BF52}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{13826AE0-CEC3-44A9-843F-BF095344BF52}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{13826AE0-CEC3-44A9-843F-BF095344BF52}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {052C5C9D-DFD8-4F6F-8B6F-165D915C3DA8}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,134 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{DD5F3477-504E-4E76-890F-140BC4738888}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ShikiApi</RootNamespace>
+    <AssemblyName>ShikiApi</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Attributes\DefaultValueAttribute.cs" />
+    <Compile Include="Attributes\RequestAttribute.cs" />
+    <Compile Include="Attributes\StringAttribute.cs" />
+    <Compile Include="Extensions\Enum.cs" />
+    <Compile Include="Extensions\RequestExtension.cs" />
+    <Compile Include="Extensions\JSONExtensions.cs" />
+    <Compile Include="Extensions\ListKeyValuePairExtension.cs" />
+    <Compile Include="JSONWriter\AnimeVideoWriterExtension.cs" />
+    <Compile Include="JSONWriter\KeyValuePairsWriterExtension.cs" />
+    <Compile Include="JSONWriter\UserListItemRequestWriterExtension.cs" />
+    <Compile Include="ShikiApplication.cs" />
+    <Compile Include="Extensions\DateTimeExtensions.cs" />
+    <Compile Include="Shikimori.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ShikiQuery.cs" />
+    <Compile Include="Extensions\StringExtensions.cs" />
+    <Compile Include="Structs\AnimeInfo.cs" />
+    <Compile Include="Structs\AnimeRole.cs" />
+    <Compile Include="Structs\AnimeVideo.cs" />
+    <Compile Include="Structs\BanInfo.cs" />
+    <Compile Include="Structs\CalendarInfo.cs" />
+    <Compile Include="Structs\Character.cs" />
+    <Compile Include="Structs\CharacterInfo.cs" />
+    <Compile Include="Structs\Club.cs" />
+    <Compile Include="Structs\ClubInfo.cs" />
+    <Compile Include="Structs\Comment.cs" />
+    <Compile Include="Structs\CommentInfo.cs" />
+    <Compile Include="Structs\Enums\AnimeDuration.cs" />
+    <Compile Include="Structs\Enums\AnimeVideoKind.cs" />
+    <Compile Include="Structs\Enums\ClubCommentPolicy.cs" />
+    <Compile Include="Structs\Enums\ClubJoinPolicy.cs" />
+    <Compile Include="Structs\Enums\ClubPolicy.cs" />
+    <Compile Include="Structs\Enums\MangaKind.cs" />
+    <Compile Include="Structs\Enums\Rating.cs" />
+    <Compile Include="Structs\Enums\ClubUserRole.cs" />
+    <Compile Include="Structs\ExternalLink.cs" />
+    <Compile Include="Structs\Manga.cs" />
+    <Compile Include="Structs\MangaInfo.cs" />
+    <Compile Include="Structs\MangaRole.cs" />
+    <Compile Include="Structs\Pickers\StudioPicker.cs" />
+    <Compile Include="Structs\Publisher.cs" />
+    <Compile Include="Structs\RelatedTitle.cs" />
+    <Compile Include="Structs\Requests\AbuseRequest.cs" />
+    <Compile Include="Structs\Enums\Season.cs" />
+    <Compile Include="Structs\Genre.cs" />
+    <Compile Include="Structs\Requests\ClubUpdateRequest.cs" />
+    <Compile Include="Structs\Requests\Request.cs" />
+    <Compile Include="Structs\Requests\SearchRequest.cs" />
+    <Compile Include="Structs\Role.cs" />
+    <Compile Include="Structs\Seyu.cs" />
+    <Compile Include="Structs\Studio.cs" />
+    <Compile Include="Structs\Pickers\AnimeKindPicker.cs" />
+    <Compile Include="Structs\Pickers\GenersPicker.cs" />
+    <Compile Include="Structs\Pickers\IdsPicker.cs" />
+    <Compile Include="Structs\Pickers\SeasonPicker.cs" />
+    <Compile Include="Structs\Enums\AbuseRequestKind.cs" />
+    <Compile Include="Structs\Anime.cs" />
+    <Compile Include="Structs\Requests\AnimeListRequest.cs" />
+    <Compile Include="Structs\AnimeSeriesVideo.cs" />
+    <Compile Include="Structs\Response\AnimeSeriesVideoResponse.cs" />
+    <Compile Include="Structs\Enums\AnimeKindRequest.cs" />
+    <Compile Include="Structs\Enums\AnimeOrder.cs" />
+    <Compile Include="Structs\Enums\AnimeSeriesVideoKind.cs" />
+    <Compile Include="Structs\Enums\AnimeSeriesVideoLanguage.cs" />
+    <Compile Include="Structs\Enums\AnimeSeriesVideoQuality.cs" />
+    <Compile Include="Structs\Response\IgnoreResponse.cs" />
+    <Compile Include="Structs\Supported\ClubImage.cs" />
+    <Compile Include="Structs\Supported\ClubLogo.cs" />
+    <Compile Include="Structs\Supported\Image.cs" />
+    <Compile Include="Structs\Enums\AnimeKind.cs" />
+    <Compile Include="Structs\Enums\TitleStatus.cs" />
+    <Compile Include="Structs\Supported\AvatarImages.cs" />
+    <Compile Include="Structs\Enums\UserItemStatus.cs" />
+    <Compile Include="Structs\Enums\TypeOfTitle.cs" />
+    <Compile Include="Structs\Response\TopicIgnoreResponse.cs" />
+    <Compile Include="Structs\Supported\TitleScreenshot.cs" />
+    <Compile Include="Structs\User.cs" />
+    <Compile Include="Structs\UserListItem.cs" />
+    <Compile Include="Structs\Requests\UserListItemRequest.cs" />
+    <Compile Include="Structs\UserScore.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
