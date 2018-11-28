@@ -52,6 +52,14 @@ namespace ShikiApi
                     return false;
                 }
 
+            if (property.PropertyType.IsEnum)
+            {
+                value = new KeyValuePair<string, string>(
+                    property.GetCustomAttribute<RequestAttribute>().Name,
+                    property.GetValue(obj).ToString());
+                return true;
+            }
+
             if (!property.IsNullableEnum()) return false;
 
             if (property.GetValue(obj) == null)
