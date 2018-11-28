@@ -4,13 +4,11 @@ namespace ShikiApi
 {
     public class SearchRequest : Request
     {
-        [String("page")]
-        [DefaultValue(0)]
+        [Request(Name = "page", DefaultValue = 0)]
         public int Page { get; set; } = 0;
-        [String("limit")]
-        [DefaultValue(0)]
+        [Request(Name = "limit", DefaultValue = 0)]
         public int Limit { get; set; } = 0;
-        [String("search")]
+        [Request(Name = "search")]
         public string Search { get; set; } = null;
     }
 }

@@ -13,20 +13,20 @@ namespace ShikiApi_Tests
         [TestMethod]
         public void GetUserRates()
         {
-            var result = shiki.GetUserRates(new UserListItemRequest { UserID = shiki.Info.ID });
+            var result = shiki.GetUserRates(new UserListItemRequest { UserId = shiki.Info.ID });
         }
 
         [TestMethod]
         public void GetUserRateById()
         {
-            var rates = shiki.GetUserRates(new UserListItemRequest{UserID = shiki.Info.ID });
+            var rates = shiki.GetUserRates(new UserListItemRequest{UserId = shiki.Info.ID });
             var result = shiki.GetUserRateById(rates.First().ID);
         }
 
         [TestMethod]
         public void IncrementUserRate()
         {
-            var rates = shiki.GetUserRates(new UserListItemRequest { UserID = shiki.Info.ID });
+            var rates = shiki.GetUserRates(new UserListItemRequest { UserId = shiki.Info.ID });
             var result = shiki.IncrementUserRate(rates.First().ID);
         }
 
@@ -40,7 +40,7 @@ namespace ShikiApi_Tests
         [TestMethod]
         public void UpdateUserRate()
         {
-            var userRate = shiki.GetUserRates(new UserListItemRequest { UserID = shiki.Info.ID }).First();
+            var userRate = shiki.GetUserRates(new UserListItemRequest { UserId = shiki.Info.ID }).First();
             var result = shiki.UpdateUserRate(userRate.ID, userRate);
         }
 

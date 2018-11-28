@@ -7,26 +7,22 @@ namespace ShikiApi
 {
     public class UserListItemRequest : Request
     {
-        [String("user_id")]
-        [DefaultValue(0)]
-        public int UserID { get; set; } = 0;
+        [Request(Name = "user_id", DefaultValue = 0)]
+        public int UserId { get; set; } = 0;
 
-        [String("target_id")]
-        [DefaultValue(0)]
-        public int TargetID { get; set; } = 0;
+        [Request(Name = "target_id", DefaultValue = 0)]
+        public int TargetId { get; set; } = 0;
 
-        [String("target_type")]
+        [Request(Name = "target_type")]
         public TypeOfTitle? TargetType { get; set; } = null;
 
-        [String("status")]
+        [Request(Name = "status")]
         public UserItemStatus? Status { get; set; } = null;
 
-        [String("page")]
-        [DefaultValue(0)]
+        [Request(Name = "page", DefaultValue = 0)]
         public int Page { get; set; } = 0;
 
-        [String("limit")]
-        [DefaultValue(0)]
+        [Request(Name = "limit", DefaultValue = 0)]
         public int Limit { get; set; } = 0;
     }
 }

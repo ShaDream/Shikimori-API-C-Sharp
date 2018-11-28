@@ -4,17 +4,17 @@ namespace ShikiApi
 {
     public class ClubUpdateRequest : Request
     {
-        [String("name")]
+        [Request(Name = "name")]
         public string Name { get; set; }
-        [String("description")]
+        [Request(Name = "description")]
         public string Description { get; set; }
-        [String("display_images")]
+        [Request(Name = "display_images")]
         public bool? DisplayImages { get; set; }
-        [String("comment_policy")]
+        [Request(Name = "comment_policy")]
         public ClubCommentPolicy? CommentPolicy { get; set; }
-        [String("topic_policy")]
+        [Request(Name = "topic_policy")]
         public ClubPolicy? TopicPolicy { get; set; }
-        [String("image_upload_policy")]
+        [Request(Name = "image_upload_policy")]
         public ClubPolicy? ImageUploadPolicy { get; set; }
     }
 }

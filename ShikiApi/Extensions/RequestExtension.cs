@@ -12,11 +12,13 @@ namespace ShikiApi
             if (!type.IsInterface)
                 return type.GetProperties();
 
-            return (new Type[] { type })
+            return (new[] { type })
                 .Concat(type.GetInterfaces())
                 .SelectMany(i => i.GetProperties());
         }
 
+
+        //TODO: not nice. Need to rewrite
         public static bool TryGetKeyValuePair(this PropertyInfo property, object obj, out KeyValuePair<string, string>? value)
         {
             value = null;
@@ -24,27 +26,40 @@ namespace ShikiApi
                 if (property.GetValue(obj) != null)
                 {
                     value = new KeyValuePair<string, string>(
-                        property.GetCustomAttribute<StringAttribute>().Name,
+                        property.GetCustomAttribute<RequestAttribute>().Name,
                         property.GetValue(obj).ToString());
                     return true;
                 }
                 else
+                {
+                    if(property.GetCustomAttribute<RequestAttribute>().IsRequired)
+                        throw new Exception($"Property {property.Name} is required");
                     return false;
+                }
 
             if (property.PropertyType.IsPrimitive)
-                if (!Equals(property.GetValue(obj), property.GetCustomAttribute<DefaultValueAttribute>().DefaultValue))
+                if (!Equals(property.GetValue(obj), property.GetCustomAttribute<RequestAttribute>().DefaultValue))
                 {
                     value = new KeyValuePair<string, string>(
-                        property.GetCustomAttribute<StringAttribute>().Name,
+                        property.GetCustomAttribute<RequestAttribute>().Name,
                         property.GetValue(obj).ToString());
                     return true;
                 }
                 else
+                {
+                    if (property.GetCustomAttribute<RequestAttribute>().IsRequired)
+                        throw new Exception($"Property {property.Name} is required");
                     return false;
+                }
 
             if (!property.IsNullableEnum()) return false;
 
-            if (property.GetValue(obj) == null) return false;
+            if (property.GetValue(obj) == null)
+            {
+                if (property.GetCustomAttribute<RequestAttribute>().IsRequired)
+                    throw new Exception($"Property {property.Name} is required");
+                return false;
+            }
 
             if (Nullable.GetUnderlyingType(property.PropertyType).IsEnum)
             {
@@ -54,13 +69,13 @@ namespace ShikiApi
                     .Invoke(null, new[] { property.GetValue(obj) }).ToString();
 
                 value = new KeyValuePair<string, string>(
-                    property.GetCustomAttribute<StringAttribute>().Name,
+                    property.GetCustomAttribute<RequestAttribute>().Name,
                     enumValue);
                 return true;
             }
 
             value = new KeyValuePair<string, string>(
-                property.GetCustomAttribute<StringAttribute>().Name,
+                property.GetCustomAttribute<RequestAttribute>().Name,
                 property.GetValue(obj).ToString());
             return true;
 
