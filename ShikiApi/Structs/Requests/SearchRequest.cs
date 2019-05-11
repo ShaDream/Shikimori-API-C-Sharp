@@ -2,12 +2,8 @@
 
 namespace ShikiApi
 {
-    public class SearchRequest : Request
+    public class SearchRequest : BaseListRequest
     {
-        [Request(Name = "page", DefaultValue = 0)]
-        public int Page { get; set; } = 0;
-        [Request(Name = "limit", DefaultValue = 0)]
-        public int Limit { get; set; } = 0;
         [Request(Name = "search")]
         public string Search { get; set; } = null;
     }

@@ -5,7 +5,7 @@ using Newtonsoft.Json;
 
 namespace ShikiApi
 {
-    public class UserListItemRequest : Request
+    public class UserListItemRequest : BaseListRequest
     {
         [Request(Name = "user_id", DefaultValue = 0)]
         public int UserId { get; set; } = 0;
@@ -18,11 +18,5 @@ namespace ShikiApi
 
         [Request(Name = "status")]
         public UserItemStatus? Status { get; set; } = null;
-
-        [Request(Name = "page", DefaultValue = 0)]
-        public int Page { get; set; } = 0;
-
-        [Request(Name = "limit", DefaultValue = 0)]
-        public int Limit { get; set; } = 0;
     }
 }

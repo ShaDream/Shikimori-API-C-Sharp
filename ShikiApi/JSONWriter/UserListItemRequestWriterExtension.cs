@@ -27,10 +27,10 @@ namespace ShikiApi.JSONWriter
                 writer.WriteProperty("rewatches", itemRequest.Rewatches);
                 writer.WriteProperty("score", itemRequest.Score);
                 writer.WriteProperty("status", Enum<UserItemStatus>.GetName(itemRequest.Status));
-                writer.WriteProperty("target_id", itemRequest.TargetID);
+                writer.WriteProperty("target_id", itemRequest.TargetId);
                 writer.WriteProperty("target_type", itemRequest.TargetType);
                 writer.WriteProperty("text", itemRequest.Text);
-                writer.WriteProperty("user_id", itemRequest.UserID);
+                writer.WriteProperty("user_id", itemRequest.UserId);
                 writer.WriteProperty("volumes", itemRequest.Volumes);
 
                 writer.WriteEndObject();

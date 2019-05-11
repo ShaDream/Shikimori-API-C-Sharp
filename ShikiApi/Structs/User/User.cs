@@ -10,6 +10,5 @@ namespace ShikiApi
         public string Avatar { get; set; }
         public AvatarImages Image { get; set; }
         public DateTime LastOnline { get; set; }
-
     }
 }

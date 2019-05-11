@@ -33,7 +33,6 @@ namespace ShikiApi.JSONWriter
             }
 
             return result.ToString();
-
         }
     }
 }

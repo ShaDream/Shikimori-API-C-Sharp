@@ -3,9 +3,8 @@ using Newtonsoft.Json;
 
 namespace ShikiApi
 {
-    public class UserListItem : UserListItemRequest
+    public class UserListItem
     {
-
         [JsonProperty(PropertyName = "Created_At")]
         public DateTime CreatedAt { get; set; }
 
@@ -13,15 +12,15 @@ namespace ShikiApi
         public DateTime UpdatedAt { get; set; }
 
         [JsonProperty(PropertyName = "user_id")]
-        public int UserID { get; set; }
+        public int UserId { get; set; }
 
         [JsonProperty(PropertyName = "target_id")]
-        public int TargetID { get; set; }
+        public int TargetId { get; set; }
 
         [JsonProperty(PropertyName = "target_type")]
         public TypeOfTitle? TargetType { get; set; }
 
-        public int ID { get; set; }
+        public int Id { get; set; }
         public int Score { get; set; }
         public int Rewatches { get; set; }
         public int? Episodes { get; set; }

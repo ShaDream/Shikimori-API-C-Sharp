@@ -2,7 +2,7 @@
 
 namespace ShikiApi
 {
-    public class UserScore
+    public class UserValue
     {
         public string Name { get; set; }
         [JsonProperty("value")]

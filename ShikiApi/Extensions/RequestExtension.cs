@@ -14,7 +14,7 @@ namespace ShikiApi
 
             return (new[] { type })
                 .Concat(type.GetInterfaces())
-                .SelectMany(i => i.GetProperties());
+                .SelectMany(i => i.GetProperties().Where(x => x.CustomAttributes.GetType() == typeof(RequestAttribute)));
         }
 
 
@@ -32,7 +32,7 @@ namespace ShikiApi
                 }
                 else
                 {
-                    if(property.GetCustomAttribute<RequestAttribute>().IsRequired)
+                    if (property.GetCustomAttribute<RequestAttribute>().IsRequired)
                         throw new Exception($"Property {property.Name} is required");
                     return false;
                 }

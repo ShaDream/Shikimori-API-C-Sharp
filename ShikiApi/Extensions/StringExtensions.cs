@@ -15,10 +15,5 @@ namespace ShikiApi
         {
             return str.IsNullOrWhiteSpace() && other.All(x => x.IsNullOrWhiteSpace());
         }
-
-        public static ByteArrayContent ToByteArrayContent(this string str)
-        {
-            return new ByteArrayContent(Encoding.ASCII.GetBytes(str));
-        }
     }
 }

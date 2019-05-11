@@ -2,7 +2,7 @@
 
 namespace ShikiApi
 {
-    public enum AnimeOrder
+    public enum ListOrder
     {
         [EnumMember(Value = "id")]
         Id,

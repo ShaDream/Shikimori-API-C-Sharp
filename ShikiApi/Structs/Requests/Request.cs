@@ -4,7 +4,7 @@ namespace ShikiApi
 {
     public abstract class Request
     {
-        public virtual KeyValuePair<string, string>[] ToKeyValuePairs()
+        public KeyValuePair<string, string>[] ToKeyValuePairs()
         {
             var parametrs = new List<KeyValuePair<string, string>>();
 

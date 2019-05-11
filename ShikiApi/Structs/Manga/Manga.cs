@@ -19,7 +19,10 @@ namespace ShikiApi
         public DateTime? AiredOn { get; set; }
         [JsonProperty("released_on")]
         public DateTime? ReleasedOn { get; set; }
-        
 
+        public MangaInfo GetFullInfo(Shikimori shiki)
+        {
+            return shiki.GetMangaById(Id);
+        }
     }
 }

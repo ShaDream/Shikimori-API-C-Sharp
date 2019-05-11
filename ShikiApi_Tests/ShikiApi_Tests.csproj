@@ -52,8 +52,14 @@
     <Compile Include="ShikiApiAuthorizationTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ShikiMethodTests.cs" />
+    <Compile Include="UserData.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UserData.resx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
+    <None Include="app.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
@@ -61,6 +67,12 @@
       <Project>{DD5F3477-504E-4E76-890F-140BC4738888}</Project>
       <Name>ShikiApi</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="UserData.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>UserData.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

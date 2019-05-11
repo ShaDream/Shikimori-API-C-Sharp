@@ -9,6 +9,8 @@ namespace ShikiApi
         [EnumMember(Value = "op")]
         OP,
         [EnumMember(Value = "ed")]
-        ED
+        ED,
+        [EnumMember(Value = "other")]
+        Other
     }
 }

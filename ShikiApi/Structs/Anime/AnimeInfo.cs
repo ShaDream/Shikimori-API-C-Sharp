@@ -9,8 +9,8 @@ namespace ShikiApi
         public string[] English { get; set; }
         public string[] Japanese { get; set; }
         public string[] Synonyms { get; set; }
-        public int duration { get; set; }
-        public float Score { get; set; }
+        public int? duration { get; set; }
+        public float? Score { get; set; }
         public string Description { get; set; }
         [JsonProperty("description_html")]
         public string DescriptionHTML { get; set; }
@@ -18,21 +18,21 @@ namespace ShikiApi
         public string DescriptionSource { get; set; }
         public string Franchise { get; set; }
         [JsonProperty("favoured")]
-        public bool IsFavoured { get; set; }
+        public bool? IsFavoured { get; set; }
         [JsonProperty("anons")]
-        public bool IsAnons { get; set; }
+        public bool? IsAnons { get; set; }
         [JsonProperty("ongoing")]
-        public bool IsOngoing { get; set; }
+        public bool? IsOngoing { get; set; }
         [JsonProperty("thread_id")]
-        public int ThreadId { get; set; }
+        public int? ThreadId { get; set; }
         [JsonProperty("topic_id")]
-        public int TopicId { get; set; }
+        public int? TopicId { get; set; }
         [JsonProperty("myanimelist_id")]
-        public int MyanimelistId { get; set; }
+        public int? MyanimelistId { get; set; }
         [JsonProperty("rates_scores_stats")]
-        public UserScore[] RatesScoreStats { get; set; }
+        public UserValue[] RatesScoreStats { get; set; }
         [JsonProperty("rates_statuses_stats")]
-        public UserScore[] RatesStatusesStats { get; set; }
+        public UserValue[] RatesStatusesStats { get; set; }
         [JsonProperty("updated_at")]
         public DateTime? UpdatedAt { get; set; }
         [JsonProperty("next_episode_at")]

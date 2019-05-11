@@ -4,7 +4,6 @@ namespace ShikiApi
 {
     public enum TypeOfTitle
     {
-        [EnumMember(Value = "HUINYA RABOTAET")]
         Anime,
         Manga
     }

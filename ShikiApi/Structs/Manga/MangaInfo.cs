@@ -29,9 +29,9 @@ namespace ShikiApi
         [JsonProperty("myanimelist_id")]
         public int MyAnimeListId { get; set; }
         [JsonProperty("rates_scores_stats")]
-        public UserScore[] RatesScoreStats { get; set; }
+        public UserValue[] RatesScoreStats { get; set; }
         [JsonProperty("rates_statuses_stats")]
-        public UserScore[] RatesStatusesStats { get; set; }
+        public UserValue[] RatesStatusesStats { get; set; }
         public Genre[] Genres { get; set; }
         public Publisher[] Publishers { get; set; }
         [JsonProperty("user_rate")]
